@@ -1,5 +1,4 @@
 import { Code2, Command, Cpu } from "lucide-react";
-import { ReactNode } from "react";
 import Challenge from "@/types/Challenge";
 
 
