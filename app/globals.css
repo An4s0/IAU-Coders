@@ -2,20 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #222222;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ffc4;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #01aa83;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.tech-grid {
+  position: absolute;
+  inset: 0;
+  mask-image: radial-gradient(circle at center, transparent 0%, black 100%);
+  background-image:
+    linear-gradient(to right, rgba(0, 255, 196, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 196, 0.1) 1px, transparent 1px);
+  background-size: 60px 60px;
+  transform: perspective(1000px) rotateX(60deg) translateY(-100px);
+  animation: grid 20s linear infinite;
 }
