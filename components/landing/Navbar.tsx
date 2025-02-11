@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Navbar({ setAuth }: Readonly<{ setAuth: (auth: boolean) => void }>) {
+export default function Navbar() {
     return (
         <nav className="p-3 mt-3 shadow-xl fixed top-0 left-1/2 transform -translate-x-1/2 max-w-7xl w-[95%] bg-black/50 backdrop-blur-xl rounded-2xl z-50 border border-primary/20">
             <div className="flex items-center justify-between">
@@ -17,7 +17,7 @@ export default function Navbar({ setAuth }: Readonly<{ setAuth: (auth: boolean) 
                     </div>
                 </Link>
 
-                <div onClick={() => setAuth(true)} className="items-center flex pl-4 pr-4 gap-4 pt-2 pb-2 bg-primary/20 rounded-lg border border-primary/20 cursor-pointer hover:bg-primary/50">
+                <div className="items-center flex pl-4 pr-4 gap-4 pt-2 pb-2 bg-primary/20 rounded-lg border border-primary/20 cursor-pointer hover:bg-primary/50">
                     Sign In
                 </div>
             </div>
