@@ -1,6 +1,6 @@
 {
   "name": "iau_coders_frontend",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -9,10 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@heroui/input": "^2.4.10",
-    "@heroui/system": "^2.4.7",
-    "@heroui/theme": "^2.4.6",
-    "framer-motion": "^12.4.1",
     "lucide-react": "^0.475.0",
     "next": "15.1.6",
     "react": "^19.0.0",
