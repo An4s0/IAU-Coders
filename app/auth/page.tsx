@@ -1,7 +1,6 @@
 'use client';
 import { useState } from "react";
 import MainLayout from "@/components/layout/Main";
-import { FaCode } from "react-icons/fa";
 import { Input } from "@heroui/input";
 import { Button } from "@heroui/button";
 import auth from "@/utils/auth";

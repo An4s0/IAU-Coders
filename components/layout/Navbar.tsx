@@ -11,7 +11,15 @@ export default function NavbaR() {
     const [mounted, setMounted] = useState(false);
     const { theme, setTheme } = useTheme();
 
-    useEffect(() => setMounted(true), []);
+    useEffect(() => {
+        setMounted(true);
+        if (typeof document !== 'undefined') {
+            const token = document.cookie.split(';').find(c => c.trim().startsWith('token='));
+            if (token) {
+                setIsAuth(true);
+            }
+        }
+    }, []);
     if (!mounted) return
 
     return (
