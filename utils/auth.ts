@@ -33,7 +33,7 @@ const auth = {
 
             const dataRes: ResponseRegisterFormat = await res.json();
 
-            if (dataRes.result === "FAILED") {
+            if (!res.ok) {
                 throw new Error(dataRes.msg || "Error in register");
             }
 
@@ -55,7 +55,7 @@ const auth = {
 
             const dataRes: ResponseLoginFormat = await res.json();
 
-            if (dataRes.result === "FAILED") {
+            if (!res.ok) {
                 throw new Error(dataRes.msg || "Error in login");
             }
 
