@@ -16,6 +16,7 @@ export default {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
         tertiary: "var(--tertiary)",
+        hover: "var(--hover)",
       },
     },
   },

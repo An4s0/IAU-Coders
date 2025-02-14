@@ -15,16 +15,16 @@ export default function Footer() {
                     <span className="font-extrabold">Links</span>
                     <div className="flex flex-col space-y-1 mt-3">
                         <Link href="/about">
-                            <p>Home</p>
+                            <p className="hover:text-hover">Home</p>
                         </Link>
                         <Link href="/problems">
-                            <p>Problems</p>
+                            <p className="hover:text-hover">Problems</p>
                         </Link>
                         <Link href="/auth">
-                            <p>Auth</p>
+                            <p className="hover:text-hover">Auth</p>
                         </Link>
                         <Link href="/profile">
-                            <p>Profile</p>
+                            <p className="hover:text-hover">Profile</p>
                         </Link>
                     </div>
                 </div>
@@ -32,10 +32,10 @@ export default function Footer() {
                     <span className="font-extrabold">Social Media</span>
                     <div className="flex flex-col space-y-1 mt-3">
                         <Link href="https://twitter.com">
-                            <p>Twitter</p>
+                            <p className="hover:text-hover">Twitter</p>
                         </Link>
                         <Link href="https://github.com">
-                            <p>Github</p>
+                            <p className="hover:text-hover">Github</p>
                         </Link>
                     </div>
                 </span>

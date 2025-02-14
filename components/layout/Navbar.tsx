@@ -42,7 +42,7 @@ export default function NavbaR() {
                     )}
                 </div>
                 <Link href={isAuth ? '/auth' : '/auth'}>
-                    <div className="h-full bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer p-1 px-2 hover:bg-background/25">
+                    <div className="h-full bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer p-1 px-2 hover:bg-hover">
                         <User className='text-background' size={32} />
                         <span className="text-background font-semibold">
                             {isAuth ? 'Sign Out' : 'Sign In'}

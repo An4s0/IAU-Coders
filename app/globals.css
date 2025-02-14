@@ -19,6 +19,7 @@
 :root {
   --background: #fff;
   --color: #000;
+  --hover: #363636;
   --primary: rgb(211, 211, 211);
   --secondary: rgb(219, 219, 219);
   --tertiary: rgb(204, 204, 204);
@@ -27,6 +28,7 @@
 .dark {
   --background: #000;
   --color: #fff;
+  --hover: #f0f0f0;
   --primary: rgb(15, 15, 15);
   --secondary: rgb(22, 22, 22);
   --tertiary: rgb(31, 31, 31);

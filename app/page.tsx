@@ -37,7 +37,7 @@ export default function Home() {
               {new Date().toISOString().split("T")[0]}
             </span>
             <Link href='/challenge'>
-              <div className="h-10 md:h-12 w-56 md:w-60 mt-10 bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer p-1 px-2 hover:bg-background/25">
+              <div className="h-10 md:h-12 w-56 md:w-60 mt-10 bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer p-1 px-2 hover:bg-hover">
                 <span className="text-background font-semibold">
                   View Today Challenge
                 </span>
@@ -91,7 +91,7 @@ export default function Home() {
                 </span>
               </div>
               <Link href='/challenge'>
-                <div className="h-10 w-full mt-5 bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer">
+                <div className="h-10 w-full mt-5 bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer hover:bg-hover">
                   <span className="text-background font-semibold">
                     Solve
                   </span>
@@ -119,7 +119,7 @@ export default function Home() {
                 </span>
               </div>
               <Link href='/challenge'>
-                <div className="h-10 w-full mt-5 bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer">
+                <div className="h-10 w-full mt-5 bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer hover:bg-hover">
                   <span className="text-background font-semibold">
                     Solve
                   </span>
@@ -147,7 +147,7 @@ export default function Home() {
                 </span>
               </div>
               <Link href='/challenge'>
-                <div className="h-10 w-full mt-5 bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer">
+                <div className="h-10 w-full mt-5 bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer hover:bg-hover">
                   <span className="text-background font-semibold">
                     Solve
                   </span>
@@ -164,7 +164,7 @@ export default function Home() {
           <h1 className="text-2xl font-semibold flex flex-col items-center md:items-start text-center md:text-left">
             Join our Discord Community
             <Link href='/discord'>
-              <div className="h-10 w-40 bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer p-1 px-2 text-background mt-5">
+              <div className="h-10 w-40 bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer p-1 px-2 text-background mt-5 hover:bg-hover">
                 Join
               </div>
             </Link>
