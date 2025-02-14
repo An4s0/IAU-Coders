@@ -23,10 +23,10 @@ export default function Home() {
 
   return (
     <MainLayout>
-      <div className="h-[2000px] w-full transition-all duration-500 relative overflow-hidden px-0 sm:px-8">
+      <div className="w-full transition-all duration-500 relative overflow-hidden px-2 sm:px-8">
 
         {/* Hero */}
-        <section className="w-full relative flex justify-between items-center rounded-3xl mt-5 px-5 h-[calc(100vh-150px)] lg:px-20">
+        <section className="relative flex justify-between items-center rounded-3xl mt-5 px-5 h-[calc(100vh-150px)] lg:px-20 mb-20">
           <div className="inline items-center space-x-4 z-20">
             <h1 className="text-4xl font-bold md:text-5xl">
               Daily Programming <br /> Challenge
@@ -63,7 +63,98 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </section>
 
+        {/* Problems */}
+        <section className="flex flex-col items-center mb-20 ">
+          <h1 className="text-3xl font-bold">
+            Problems
+          </h1>
+          <div className="flex flex-wrap gap-5 mt-5 w-full justify-center ">
+            <div className="w-full sm:w-96 h-52 border-1 rounded-lg p-5 border-tertiary">
+              <h1 className="text-2xl font-semibold">
+                Sum of Digits
+              </h1>
+              <span>
+                Given an array of integers, return the sum of all the digits.
+              </span>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="rounded-full text-sm opacity-60">
+                  #Typescript
+                </span>
+                <span className="rounded-full text-sm opacity-60">
+                  #Java
+                </span>
+                <span className="rounded-full text-sm opacity-60">
+                  #Python
+                </span>
+              </div>
+              <Link href='/challenge'>
+                <div className="h-10 w-full mt-5 bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer">
+                  <span className="text-background font-semibold">
+                    Solve
+                  </span>
+                  <FaArrowRight className="text-background" size={24} />
+                </div>
+              </Link>
+            </div>
+
+            <div className="w-full sm:w-96 h-52 border-1 rounded-lg p-5 border-tertiary">
+              <h1 className="text-2xl font-semibold">
+                Sort Array
+              </h1>
+              <span>
+                Given an array of integers, sort the array in ascending order.
+              </span>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="rounded-full text-sm opacity-60">
+                  #Javascript
+                </span>
+                <span className="rounded-full text-sm opacity-60">
+                  #C++
+                </span>
+                <span className="rounded-full text-sm opacity-60">
+                  #Go
+                </span>
+              </div>
+              <Link href='/challenge'>
+                <div className="h-10 w-full mt-5 bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer">
+                  <span className="text-background font-semibold">
+                    Solve
+                  </span>
+                  <FaArrowRight className="text-background" size={24} />
+                </div>
+              </Link>
+            </div>
+
+            <div className="w-full sm:w-96 h-52 border-1 rounded-lg p-5 border-tertiary">
+              <h1 className="text-2xl font-semibold">
+                Reverse String
+              </h1>
+              <span>
+                Given a string, return the reverse of the string.
+              </span>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="rounded-full text-sm opacity-60">
+                  #C
+                </span>
+                <span className="rounded-full text-sm opacity-60">
+                  #Rust
+                </span>
+                <span className="rounded-full text-sm opacity-60">
+                  #Ruby
+                </span>
+              </div>
+              <Link href='/challenge'>
+                <div className="h-10 w-full mt-5 bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer">
+                  <span className="text-background font-semibold">
+                    Solve
+                  </span>
+                  <FaArrowRight className="text-background" size={24} />
+                </div>
+              </Link>
+            </div>
+          </div>
         </section>
 
       </div>
