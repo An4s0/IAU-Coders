@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import MainLayout from '@/components/layout/Main';
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
+import { FaDiscord } from 'react-icons/fa';
 
 export default function Home() {
   const colors = ['bg-primary', 'bg-secondary', 'bg-tertiary'];
@@ -66,7 +67,7 @@ export default function Home() {
         </section>
 
         {/* Problems */}
-        <section className="flex flex-col items-center mb-20 ">
+        <section className="flex flex-col items-center mb-36 ">
           <h1 className="text-3xl font-bold">
             Problems
           </h1>
@@ -155,6 +156,19 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </section>
+
+        {/* Join Discord */}
+        <section className="max-w-4xl h-60 mx-auto flex flex-col md:flex-row justify-center items-center space-y-5 md:space-y-0 md:space-x-28 mb-36 border-2 border-primary rounded-3xl p-5">
+          <FaDiscord size={150} />
+          <h1 className="text-2xl font-semibold flex flex-col items-center md:items-start text-center md:text-left">
+            Join our Discord Community
+            <Link href='/discord'>
+              <div className="h-10 w-40 bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer p-1 px-2 text-background mt-5">
+                Join
+              </div>
+            </Link>
+          </h1>
         </section>
 
       </div>
