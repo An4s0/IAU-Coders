@@ -13,6 +13,7 @@
     "@heroui/input": "^2.4.10",
     "@heroui/system": "^2.4.7",
     "@heroui/theme": "^2.4.6",
+    "axios": "^1.7.9",
     "framer-motion": "^12.4.3",
     "lucide-react": "^0.475.0",
     "next": "15.1.6",

@@ -1,5 +1,6 @@
 import { Register, Login } from "@/types/auth";
 import cookies from "@/utils/cookies";
+import axios from "axios";
 
 interface ResponseRegisterFormat {
     result: string;
@@ -23,17 +24,11 @@ interface ResponseLoginFormat {
 const auth = {
     register: async (data: Register): Promise<ResponseRegisterFormat> => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/register`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
+            const res = await axios.post<ResponseRegisterFormat>(`${process.env.NEXT_PUBLIC_BASE_URL}/register`, data);
 
-            const dataRes: ResponseRegisterFormat = await res.json();
+            const dataRes: ResponseRegisterFormat = await res.data;
 
-            if (!res.ok) {
+            if (res.status >= 400) {
                 throw new Error(dataRes.msg || "Error in register");
             }
 
@@ -45,17 +40,11 @@ const auth = {
     },
     login: async (data: Login): Promise<ResponseLoginFormat> => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/login`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
+            const res = await axios.post<ResponseLoginFormat>(`${process.env.NEXT_PUBLIC_BASE_URL}/login`, data);
 
-            const dataRes: ResponseLoginFormat = await res.json();
+            const dataRes: ResponseLoginFormat = await res.data;
 
-            if (!res.ok) {
+            if (res.status >= 400) {
                 throw new Error(dataRes.msg || "Error in login");
             }
 
