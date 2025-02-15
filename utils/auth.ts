@@ -62,7 +62,7 @@ const auth = {
 
         return {
             check: !!token
-        }a
+        }
 
     }
 }
