@@ -21,6 +21,10 @@ interface ResponseLoginFormat {
     }
 };
 
+interface ResponseCheckFormat {
+    check: boolean;
+}
+
 const auth = {
     register: async (data: Register): Promise<ResponseRegisterFormat> => {
         try {
@@ -28,14 +32,12 @@ const auth = {
 
             const dataRes: ResponseRegisterFormat = await res.data;
 
-            if (res.status >= 400) {
-                throw new Error(dataRes.msg || "Error in register");
-            }
+            if (res.status >= 400) console.error(dataRes.msg || "Error in register");
 
             return dataRes;
-        } catch (error) {
+        } catch (error: any) {
             console.error("Register error: ", error);
-            throw error
+            return error.response.data;
         }
     },
     login: async (data: Login): Promise<ResponseLoginFormat> => {
@@ -44,17 +46,24 @@ const auth = {
 
             const dataRes: ResponseLoginFormat = await res.data;
 
-            if (res.status >= 400) {
-                throw new Error(dataRes.msg || "Error in login");
-            }
+            if (res.status >= 400) console.error(dataRes.msg || "Error in login");
 
             cookies.set("token", dataRes.data.token, 7);
 
             return dataRes;
-        } catch (error) {
+        } catch (error: any) {
             console.error("Login error: ", error);
-            throw error
+            return error.response.data;
         }
+    },
+    check: async (): Promise<ResponseCheckFormat> => {
+
+        const token = cookies.get("token");
+
+        return {
+            check: !!token
+        }a
+
     }
 }
 
