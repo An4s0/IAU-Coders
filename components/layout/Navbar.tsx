@@ -4,6 +4,7 @@ import { useTheme } from 'next-themes';
 import { FaCode, FaSun, FaMoon } from "react-icons/fa";
 import Link from "next/link";
 import { User } from 'lucide-react';
+import cookies from '@/utils/cookies';
 
 
 export default function NavbaR() {
@@ -41,8 +42,15 @@ export default function NavbaR() {
                         <FaMoon size={24} />
                     )}
                 </div>
-                <Link href={isAuth ? '/auth' : '/auth'}>
-                    <div className="h-full bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer p-1 px-2 hover:bg-hover">
+                <Link href={isAuth ? '/' : '/auth'}>
+                    <div
+                        onClick={() => {
+                            if (isAuth) {
+                                cookies.remove('token');
+                                setIsAuth(false);
+                            }
+                        }}
+                        className="h-full bg-color flex items-center justify-center space-x-2 rounded-md cursor-pointer p-1 px-2 hover:bg-hover">
                         <User className='text-background' size={32} />
                         <span className="text-background font-semibold">
                             {isAuth ? 'Sign Out' : 'Sign In'}

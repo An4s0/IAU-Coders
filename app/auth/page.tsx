@@ -11,7 +11,8 @@ export default function Auth() {
     const [data, setData] = useState({
         name: "",
         email: "",
-        password: ""
+        password: "",
+        confirmPassword: ""
     });
 
     const onPress = async () => {
@@ -25,12 +26,14 @@ export default function Auth() {
         if (!/[A-Z]/.test(data.password)) return setError("Password must contain at least one uppercase letter");
         if (!/[a-z]/.test(data.password)) return setError("Password must contain at least one lowercase letter");
         if (!/[0-9]/.test(data.password)) return setError("Password must contain at least one number");
+        if (!isLogin && data.password !== data.confirmPassword) return setError("Passwords do not match");
 
         let authRes;
         if (isLogin) authRes = await auth.login(data);
         else authRes = await auth.register(data);
 
         if (authRes.result === "FAILED") return setError(authRes.msg);
+        if (authRes.result === "SUCCESS") return window.location.href = "/";
     }
 
     return (
@@ -46,6 +49,8 @@ export default function Auth() {
                     {!isLogin && <Input label="Name" placeholder="Enter your name" variant="underlined" onChange={(e) => setData({ ...data, name: e.target.value })} />}
                     <Input label="Email" placeholder="Enter your email" variant="underlined" onChange={(e) => setData({ ...data, email: e.target.value })} />
                     <Input label="Password" placeholder="Enter your password" type="password" variant="underlined" onChange={(e) => setData({ ...data, password: e.target.value })} />
+                    {!isLogin && <Input label="Confirm Password" placeholder="Confirm your password" type="password" variant="underlined" onChange={(e) => setData({ ...data, confirmPassword: e.target.value })} />}
+                    
                     <Button className="bg-color text-background hover:bg-hover" onPress={onPress} >
                         {isLogin ? "Sign in" : "Sign up"}
                     </Button>

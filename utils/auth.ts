@@ -56,6 +56,15 @@ const auth = {
             return error.response.data;
         }
     },
+    logout: async (): Promise<boolean> => {
+        try {
+            cookies.remove("token");
+            return true;
+        } catch (error: any) {
+            console.error("Logout error: ", error);
+            return false;
+        }
+    },
     check: async (): Promise<ResponseCheckFormat> => {
 
         const token = cookies.get("token");
