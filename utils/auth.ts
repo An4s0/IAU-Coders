@@ -1,4 +1,4 @@
-import { Register, Login } from "@/types/auth";
+import { Register, Login, Verify } from "@/types/auth";
 import cookies from "@/utils/cookies";
 import axios from "axios";
 
@@ -21,8 +21,14 @@ interface ResponseLoginFormat {
     }
 };
 
+interface ResponseVerifyFormat {
+    result: string;
+    msg: string;
+}
+
 interface ResponseCheckFormat {
-    check: boolean;
+    result: string;
+    msg: string;
 }
 
 const auth = {
@@ -65,14 +71,32 @@ const auth = {
             return false;
         }
     },
-    check: async (): Promise<ResponseCheckFormat> => {
+    verify: async (data: Verify): Promise<ResponseVerifyFormat> => {
+        try {
+            const res = await axios.post<ResponseVerifyFormat>(`${process.env.NEXT_PUBLIC_BASE_URL}/verify`, data);
 
+            const dataRes: ResponseVerifyFormat = await res.data;
+
+            if (res.status >= 400) console.error(dataRes.msg || "Error in verify");
+
+            return dataRes;
+        } catch (error: any) {
+            console.error("Verify error: ", error);
+            return error.response.data;
+        }
+    },
+    check: async (): Promise<ResponseCheckFormat> => {
         const token = cookies.get("token");
 
-        return {
-            check: !!token
-        }
+        const res = await axios.post<ResponseCheckFormat>(`${process.env.NEXT_PUBLIC_BASE_URL}/verify`, {
+            headers: {
+                header: `Authorization: Bearer ${token}`
+            }
+        });
 
+        const dataRes: ResponseCheckFormat = await res.data;
+
+        return dataRes;
     }
 }
 
